@@ -1,0 +1,4 @@
+# Only needed to REGENERATE the sample (make_sample.py scans the Pile corpus).
+# The shipped demo -- `python3 demo.py` on the labeled data/ -- needs nothing
+# beyond the Python standard library.
+datasets
