@@ -49,36 +49,19 @@ wimbd_detect_all`.
 
 ## Cách chạy
 
-Không cần cài đặt gì -- bản demo có sẵn chỉ chạy bằng thư viện chuẩn của Python
-(nó dùng lại `data/sample.csv` / `data/totals.json` đã gán nhãn sẵn):
+Chạy demo trên dữ liệu đã gán nhãn sẵn trong `data/` (chỉ cần thư viện chuẩn
+của Python):
 
 ```bash
 python3 demo.py
 ```
 
-Lệnh này in ra Table 1, Figure 1, và kết luận về ý nghĩa thống kê của
-permutation test.
+Kết quả in ra Table 1, Figure 1 và permutation test.
 
-### Tạo lại mẫu từ đầu
-
-Chỉ cần khi bạn muốn có một mẫu mới (chưa gán nhãn) để tự gán nhãn lại. Bước này
-quét corpus The Pile nên cần thư viện HuggingFace `datasets`:
+Muốn tạo lại mẫu từ đầu (cần HuggingFace `datasets`):
 
 ```bash
 pip install -r requirements.txt
-python3 make_sample.py
-# -> mở data/sample.csv, tự tay điền is_true_positive (1/0) cho từng dòng
-python3 compute_results.py   # hoặc chạy luôn: python3 demo.py
+python3 make_sample.py   # rồi gán nhãn is_true_positive (1/0) trong data/sample.csv
+python3 compute_results.py
 ```
-
-## Hạn chế đã biết (chủ ý để lại làm hướng phát triển)
-
-- Việc phát hiện `ip_v6` có precision ~0% trên các subset nhiều code của Pile
-  (GitHub, StackExchange) vì dấu `::` trần là cú pháp phổ biến trong
-  Haskell/Fortran/argparse, trùng với ký hiệu rút gọn của IPv6.
-- Việc phát hiện `phone` trên subset DM-Mathematics chủ yếu là false positive
-  (các đáp án số học tình cờ có 10 chữ số) — cùng loại lỗi mà chính bài báo ghi
-  nhận với các false positive kiểu `MAXINT`.
-- Kích thước mẫu ở đây (15 mỗi ô) nhỏ hơn nhiều so với bài báo (250 mỗi ô), nên
-  các p-value của permutation test trong `compute_results.py` yếu về mặt thống
-  kê hơn so với bài báo; tuy nhiên hướng và độ lớn của hiệu ứng vẫn khớp.
