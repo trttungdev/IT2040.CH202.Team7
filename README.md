@@ -20,7 +20,7 @@ Chạy trên `NeelNanda/pile-10k` một mẫu công khai gồm 10.000 tài liệ
 The Pile, đúng bằng corpus pretraining mà bài báo sử dụng nên đây là dữ liệu
 thật ở quy mô có thể chạy được trên laptop.
 
-## Cấu trúc mã nguồn
+## Cấu trúc 
 
 ```
 detectors.py       cả hai bộ detector, đặt cạnh nhau để so sánh:
