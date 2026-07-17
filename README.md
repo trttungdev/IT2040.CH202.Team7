@@ -11,13 +11,13 @@
 ## Giới thiệu
 
 Bản tái hiện ở quy mô seminar của bài báo **"Personal Information Parroting in
-Language Models"** (Subramani, Ghate, Diab — Findings of EACL 2026): tái hiện
+Language Models"** (Subramani, Ghate, Diab Findings of EACL 2026): tái hiện
 bộ detector mà bài báo đề xuất (Section 2 / Appendix A) và phần kiểm chứng nó
 so với framework trước đó là WIMBD (Elazar et al., 2023) (Section 2.2,
 Figure 1, Table 1).
 
-Chạy trên `NeelNanda/pile-10k` — một mẫu công khai gồm 10.000 tài liệu của bộ
-The Pile, đúng bằng corpus pretraining mà bài báo sử dụng — nên đây là dữ liệu
+Chạy trên `NeelNanda/pile-10k` một mẫu công khai gồm 10.000 tài liệu của bộ
+The Pile, đúng bằng corpus pretraining mà bài báo sử dụng nên đây là dữ liệu
 thật ở quy mô có thể chạy được trên laptop.
 
 ## Cấu trúc mã nguồn
